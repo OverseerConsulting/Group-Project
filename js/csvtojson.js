@@ -26,7 +26,10 @@ let inputArray = input;
 //console.log(inputArray);
 let finalArray = new Array();
 let i;
-for(i=0; i<inputArray.length; i++){
+let startPoint;
+if(inputArray[1] == "Score"){startPoint=2;}
+	else{startPoint=0;}
+for(i=startPoint; i<inputArray.length; i++){
 	var addJsonData = new Object();
 	addJsonData.Name = inputArray[i];
 	addJsonData.Score = inputArray[i+1];
@@ -37,5 +40,5 @@ var jsonArray = JSON.parse(JSON.stringify(finalArray))
 //console.log(jsonArray);
 return jsonArray;
 }
-//outputJSON(inputCSVFile("file://C:/Users/stuar/Documents/!Work/Node/harrypotternames.csv"));
+//outputJSON(inputCSVFile("file://C:/Users/Administrator/Documents/Final_Project/input/csvTest2.csv"));
 module.exports = {outputJSON, inputCSVFile};

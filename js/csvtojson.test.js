@@ -3,9 +3,10 @@ var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 var Methods = require("./csvtojson.js");
 var outputJSON = Methods.outputJSON;
 var inputCSVFile = Methods.inputCSVFile;
-const fileLocation = "file://C:/Users/Administrator/Documents/Final_Project/test.txt";
-const outputJSONConst = outputJSON(inputCSVFile(fileLocation));
-const inputCSVFileText = inputCSVFile(fileLocation);
+const fileLocation = "file://C:/Users/Administrator/Documents/Final_Project/";
+const outputJSONConst = outputJSON(inputCSVFile(fileLocation+"csvTest.csv"));
+const inputCSVFileText = inputCSVFile(fileLocation+"csvTest.csv");
+const inputCSVFileTextNoHeaders = inputCSVFile(fileLocation+"csvTestNoHeaders.csv");
 
 console.log(outputJSONConst);
 console.log(inputCSVFile(fileLocation));
@@ -21,17 +22,26 @@ describe("JSON formatting test", function() {
     });
 });
 
-describe("Data test", function() {
+describe("Data test (CSV with headers)", function() {
+    test("The first value should equal to the first part of the CSV's name, after skipping the headings", function() {
+        expect(outputJSONConst[0].Name).toBe(inputCSVFileText[2]);
+    });
+    test("The Score should equal to the first part of the CSV's score, after skipping the headings", function() {
+        expect(outputJSONConst[0].Score).toBe(inputCSVFileText[3]);
+    });
+});
+
+describe("Data test (CSV without headers)", function() {
     test("The first value should equal to the first part of the CSV's name", function() {
-        expect(outputJSONConst[0].Name).toBe(inputCSVFileText[0]);
+        expect(outputJSONConst[0].Name).toBe(inputCSVFileTextNoHeaders[0]);
     });
     test("The Score should equal to the first part of the CSV's score", function() {
-        expect(outputJSONConst[0].Score).toBe(inputCSVFileText[1]);
+        expect(outputJSONConst[0].Score).toBe(inputCSVFileTextNoHeaders[1]);
     });
 });
 
 describe("No file test", function() {
-    test("An error should be returned or something", function() {
+    test("An error should be returned when the file doesn't exist", function() {
         expect(inputCSVFile("file://C:/Users/stuar/Documents/!Work/Node/fakeFile.txt")[0]).toBe('Error: ENOENT: no such file or directory');
     });
 });
