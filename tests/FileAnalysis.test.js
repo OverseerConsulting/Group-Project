@@ -1,14 +1,15 @@
 const fileAnalyser = require('../FileAnalysis.js');
 let analyseFile = fileAnalyser.analyseDocument;
+let db = require('../DBinteraction.js');
+
+afterAll(() => {
+    db.removeReport("testFile");
+});
 
 let testDoc1 = {
     name: "testFile",
     filename: "122h2bab2.pdf",
-    status: "pending",
-    score: 0,
     time_stored: "",
-    time_started: "",
-    time_finished: "",
     ownder_id: 1,
     flaggedWordsList: "harrypotternames",
     words: [
@@ -34,11 +35,7 @@ let testDoc1 = {
 let testDoc2 = {
     name: "testFile",
     filename: "122h2bab2.pdf",
-    status: "pending",
-    score: 0,
     time_stored: "",
-    time_started: "",
-    time_finished: "",
     ownder_id: 1,
     flaggedWordsList: "harrypotternames",
     words: [
@@ -55,10 +52,6 @@ let testDoc2 = {
             count: 2
         },
         {
-            word: "daddy",
-            count: 1
-        },
-        {
             word: "wand",
             count: 5
         },
@@ -72,26 +65,8 @@ let testDoc2 = {
         }
     ]
 }
-
-let testFlagdWords = {
-    name: "Harry Potter",
-    words: [
-        {
-            word: "wand",
-            score: 2
-        },
-        {
-            word: "harry",
-            score: 1
-        },
-        {
-            word: "daddy",
-            score: 3
-        }
-    ]
-}
 describe("File Analyser", function () {
-    describe("Testing Document 1", async function () {
+    describe("Testing Document 1", function () {
 
         test("Document 1 should have a total word count of 65", async () => {
             const testReport1 = await analyseFile(testDoc1);
@@ -115,18 +90,18 @@ describe("File Analyser", function () {
         })
     })
 
-    describe("Testing Document 2", async function () {
-        test("Document 2 should have a total word count of 118", async () => {
+    describe("Testing Document 2", function () {
+        test("Document 2 should have a total word count of 117", async () => {
             const testReport2 = await analyseFile(testDoc2);
-            expect(testReport2.wordCount).toBe(118);
+            expect(testReport2.wordCount).toBe(117);
         });
         test("Document 2 should have a score of 18", async () => {
             const testReport2 = await analyseFile(testDoc2);
             expect(testReport2.score).toBe(18);
         })
-        test('Document 2 should have a flagged percentage of 1.69%', async () => {
+        test('Document 2 should have a flagged percentage of 1.71%', async () => {
             const testReport2 = await analyseFile(testDoc2);
-            expect(testReport2.flagPercent).toBe("0.0169");
+            expect(testReport2.flagPercent).toBe("0.0171");
         })
         test('Document 2 should be set to analysed', async () => {
             const testReport2 = await analyseFile(testDoc2);
