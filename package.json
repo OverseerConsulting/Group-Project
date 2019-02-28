@@ -1,0 +1,23 @@
+{
+  "name": "parsetest",
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "version": "1.0.0",
+  "main": "parsetest.js",
+  "scripts": {
+    "test": "jest --detectOpenHandles"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^24.1.0",
+    "mongoose": "^5.4.16",
+    "node-ensure": "0.0.0",
+    "pdf-parser": "^1.0.5",
+    "pdf2json": "^1.1.8"
+  },
+  "devDependencies": {},
+  "description": ""
+}
