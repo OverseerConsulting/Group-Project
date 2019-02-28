@@ -50,7 +50,7 @@ async function analyseDocument(document) {
 }
 
 function postReport(report) {
-    db.postReport(report);
+    DB.postReport(report);
 }
 
 function calculateRank(report) {
