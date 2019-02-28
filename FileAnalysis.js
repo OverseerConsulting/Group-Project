@@ -4,7 +4,7 @@ async function analyseDocument(document) {
 
     let flaggedWords = [];
 
-    await DB.app().then(function (value) {
+    await DB.getFlaggedWords().then(function (value) {
         flaggedWords = value;
     });
 
