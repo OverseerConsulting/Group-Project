@@ -66,4 +66,32 @@ async function deleteListsFromMongodb(dbconnect) {
     }
 }
 
-module.exports = { writeToMongodb, writeListToMongodb, deleteAllFromMongodb, deleteListsFromMongodb };
+async function outputData(dbconnect) {
+    return new Promise(function (resolve, reject) {
+        var mongoose = require('mongoose');
+
+        mongoose.connect(dbconnect, { useNewUrlParser: true });
+
+        var mongoose = require('mongoose');
+        var wordList = require("./schemas/listschema.js");
+
+        module.exports = wordList;
+
+        wordList.find({}, { name: 1, filename: 1, time_stored: 1, owner_id: 1, words: 1 },
+            function (err, wordList) {
+                if (err) throw err;
+
+                resolve(wordList);
+            });
+    })
+}
+async function app(dbconnect) {
+    var wordList = await outputData(dbconnect)
+    mongoose.disconnect();
+    console.log(wordList);
+    return wordList;
+}
+app();
+
+
+module.exports = { writeToMongodb, writeListToMongodb, deleteAllFromMongodb, deleteListsFromMongodb, app };

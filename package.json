@@ -16,7 +16,8 @@
     "mongoose": "^5.4.16",
     "node-ensure": "0.0.0",
     "pdf-parser": "^1.0.5",
-    "pdf2json": "^1.1.8"
+    "pdf2json": "^1.1.8",
+    "lodash": "4.17.11"
   },
   "devDependencies": {},
   "description": ""
