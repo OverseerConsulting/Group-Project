@@ -1,9 +1,10 @@
+let DB = require('./returnAllFromDB.js');
+
 async function analyseDocument(document) {
-    let dbgrabber = require('./databaseGrabber.js');
-    let secondDB = require('./returnAllFromDB.js');
+
     let flaggedWords = [];
-    
-    await secondDB.app().then(function(value){
+
+    await DB.app().then(function (value) {
         flaggedWords = value;
     });
 
@@ -18,12 +19,14 @@ async function analyseDocument(document) {
     let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
     let time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     report.time_started = date + time;
+    let words = [];
 
     document.words.forEach(function (docWord) {
         wordCount = wordCount + docWord.count;
 
         flaggedWords.forEach(function (flagWord) {
             if (docWord.word.toLowerCase() == flagWord.Name.toLowerCase()) {
+                words.push({ word: docWord.word, count: docWord.count });
                 score = score + (docWord.count * flagWord.Score);
                 flaggedWordCount = flaggedWordCount + docWord.count;
             }
@@ -40,7 +43,14 @@ async function analyseDocument(document) {
     time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
     report.time_finished = date + time;
     report.rank = calculateRank(report);
+    report.words = words;
+
+    postReport(report);
     return report;
+}
+
+function postReport(report) {
+    db.postReport(report);
 }
 
 function calculateRank(report) {
