@@ -1,4 +1,4 @@
-let DB = require('./returnAllFromDB.js');
+let DB = require('./DBinteraction.js');
 
 async function analyseDocument(document) {
 
