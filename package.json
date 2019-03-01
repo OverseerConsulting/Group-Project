@@ -14,7 +14,13 @@
   "dependencies": {
     "acorn": "^6.1.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.15"
+    "mongoose": "^5.4.15",
+    "chokidar": "^2.1.2",
+    "fsevents": "^1.2.7",
+    "jest": "^24.1.0",
+    "nan": "^2.12.1",
+    "should": "^13.2.3",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
