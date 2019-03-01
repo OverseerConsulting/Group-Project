@@ -2,8 +2,8 @@ const fileAnalyser = require('../FileAnalysis.js');
 let analyseFile = fileAnalyser.analyseDocument;
 let db = require('../DBinteraction.js');
 
-afterAll(() => {
-    db.removeReport("testFile");
+afterAll(async () => {
+    await db.removeReport("testFile");
 });
 
 let testDoc1 = {
