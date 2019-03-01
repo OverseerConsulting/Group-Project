@@ -5,16 +5,28 @@ const Schema = mongoose.Schema;
 const UserSchema = new Schema({
     firstName: {
         type: String,
-        required: true
+        defualt: ''
     },
     lastName: {
         type: String,
-        required: true
+        defualt: ''
     },
     email: {
         type: String,
-        required: true
-    }
+        defualt: ''
+    },
+     password:{
+        type: String,
+         defualt: ''
+  },
+    jobRole:{
+        type: String,
+        defualt: ''
+  },
+    clearenceLevel: {
+        type: String,
+        defualt: ''
+  }
 });
 
 const User = mongoose.model('user-details', UserSchema);
