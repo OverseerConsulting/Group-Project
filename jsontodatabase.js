@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
-var pdfmodel = require("./schemas/pdfschema.js");
-var listmodel = require("./schemas/listschema.js");
+var pdfmodel = require("./models/pdfschema.js");
+var listmodel = require("./models/documents.js");
 
 async function writeToMongodb(dbconnect, inputJson) {
 
@@ -73,7 +73,7 @@ async function outputData(dbconnect) {
         mongoose.connect(dbconnect, { useNewUrlParser: true });
 
         var mongoose = require('mongoose');
-        var wordList = require("./schemas/listschema.js");
+        var wordList = require("./models/documents.js");
 
         module.exports = wordList;
 

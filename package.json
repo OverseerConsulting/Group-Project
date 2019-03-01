@@ -2,12 +2,13 @@
   "name": "parsetest",
   "jest": {
     "collectCoverage": true,
-    "verbose": true
+    "verbose": true,
+    "testEnvironment": "node"
   },
   "version": "1.0.0",
   "main": "parsetest.js",
   "scripts": {
-    "test": "jest --detectOpenHandles"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",

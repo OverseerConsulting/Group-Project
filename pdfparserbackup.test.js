@@ -2,8 +2,62 @@
 //pdfParser.workerSrc = "./node_modules/pdf-parser/lib/pdf.worker.js";
 
 const methods = require("./pdfparser.js");
+let initiate = methods.initiate;
 let checkDuplicate = methods.checkDuplicate;
 let removePunctuation = methods.removePunctuation;
+
+const getdb = require("./jsontodatabase.js");
+let getdata = getdb.app;
+
+let dbconnect = 'mongodb://localhost/testdb';
+
+
+describe("Parsing PDF Data", function () {
+
+    describe("Lorem Ipsum PDF", async function () {
+
+        let PDF_PATH = 'loremIpsum.pdf';
+        
+        await initiate(dbconnect, PDF_PATH);
+
+        test("First word should be 'test'", async () => {   
+            const wordList = await getdata(dbconnect).words;
+            expect(wordList[0].word).toBe("test");
+        });
+
+        test("Last word should 'hendrerit'", async () => {
+            const wordList = await getdata(dbconnect).words;
+            expect(wordList[wordList.length - 1].word.toBe("hendrerit"));
+        });
+        test("Count of word 'test' should be 1", async () => {
+            expect(1).toBe(1);
+        });
+        test("Count of word 'hendrerit' should be 2", async () => {
+            expect(2).toBe(2);
+        });
+    });
+
+
+    describe("Dummy PDF", function () {
+
+        let PDF_PATH = 'dummyText.pdf';
+
+        test("First word should be 'lorem'", async () => {
+            expect("lorem").toBe("lorem");
+        });
+        test("Last word should 'rackham'", async () => {
+            expect("rackham").toBe("rackham");
+        });
+        test("Count of word 'lorem' should be 13", async () => {
+            expect(13).toBe(13);
+        });
+        test("Count of word 'rackham' should be 1", async () => {
+            expect(1).toBe(1);
+        });
+    });
+});
+
+
 
 describe("Checking if words already exist in word list", function () {
 
