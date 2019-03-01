@@ -27,9 +27,9 @@ async function initiate(dbconnect, PDF_PATH) {
     return setTimeout(printList, 3000);
 
     function printList() {
-        today = new Date();
-        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
         let listObject = {};
         //console.log(wordList);
@@ -91,7 +91,7 @@ function doParse(dbconnect, pdf) {
                 tempList[k] = removePunctuation(tempList[k]);
                 if (tempList[k] != "") {
                     if (checkDuplicate(tempList[k], wordList) == null) {
-                        tempWord = { "word": tempList[k].toLowerCase(), "count": 1 };
+                        let tempWord = { "word": tempList[k].toLowerCase(), "count": 1 };
                         wordList.push(tempWord);
                     } else {
                         wordList[checkDuplicate(tempList[k], wordList)].count += 1;
