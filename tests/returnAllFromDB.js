@@ -1,7 +1,9 @@
+let databaseURL = "mongodb://localhost/test";
+
 async function outputData() {
   return new Promise(function (resolve, reject) {
     let mongoose = require('mongoose');
-    mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
+    mongoose.connect(databaseURL, { useNewUrlParser: true });
 
     let Schema = require("./jsontomongoschema"); //call model
 	Schema.set('collection', "integrationtest");

@@ -1,9 +1,10 @@
 let jsonString;
 let mongoose = require('mongoose');
+let databaseURL = "mongodb://localhost/test";
 
 function writeToMongodb() {
   let Methods = require('./csvtojson.js');
-  let flaggedWordsSchema = require('./jsontomongoschema.js');
+  let flaggedWordsSchema = require('../models/jsontomongoschema.js');
   let outputJSON = Methods.outputJSON;
   let inputCSVFile = Methods.inputCSVFile;
   let fileFormat = fileName.substr(fileName.lastIndexOf("."));
@@ -13,7 +14,7 @@ function writeToMongodb() {
     let rawFile = fileName.substring(fileName.lastIndexOf("/") + 1);
     let collectionName = rawFile.substring(0, rawFile.indexOf("."));
     //Set up default mongoose connection
-    mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
+    mongoose.connect(databaseURL, { useNewUrlParser: true });
     mongoose.Promise = global.Promise;
     let db = mongoose.connection;
 
