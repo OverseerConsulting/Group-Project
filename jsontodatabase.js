@@ -68,11 +68,9 @@ async function deleteListsFromMongodb(dbconnect) {
 
 async function outputData(dbconnect) {
     return new Promise(function (resolve, reject) {
-        var mongoose = require('mongoose');
 
         mongoose.connect(dbconnect, { useNewUrlParser: true });
 
-        var mongoose = require('mongoose');
         var wordList = require("./models/documents.js");
 
         module.exports = wordList;
