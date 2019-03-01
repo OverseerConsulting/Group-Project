@@ -54,7 +54,6 @@ function postReport(report) {
 }
 
 function calculateRank(report) {
-    let wordCount = report.wordCount;
     let flaggedWordCount = report.flaggedWordCount;
     let flagPercent = report.flagPercent;
     let score = report.score;
