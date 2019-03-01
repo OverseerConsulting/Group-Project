@@ -2,12 +2,8 @@ var mongoose = require('mongoose');
 
 async function outputData(dbconnect) {
     return new Promise(function (resolve, reject) {
-        var mongoose = require('mongoose');
 
         mongoose.connect(dbconnect, { useNewUrlParser: true });
-
-        // grab the things we need
-        var mongoose = require('mongoose');
 
         // we need to create a model using it
         var wordList = require("./models/documents.js");
