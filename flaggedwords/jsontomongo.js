@@ -6,7 +6,7 @@ let databaseURL = "mongodb://localhost/test";
 function writeToMongodb(fileName) {
   console.log(fileName)
   let Methods = require('./csvtojson.js');
-  let flaggedWordsSchema = require('./jsontomongoschema.js');
+  let flaggedWordsSchema = require('../models/jsontomongoschema.js');
   let outputJSON = Methods.outputJSON;
   let inputCSVFile = Methods.inputCSVFile;
   let fileFormat = fileName.substr(fileName.lastIndexOf("."));
