@@ -15,7 +15,7 @@ async function outputData(tableName) {
 }
 async function getFlaggedWords(tableName) {
   var flaggedWordsList = await outputData(tableName);
-  return flaggedWordsList;
+  return flaggedWordsList.Words;
 }
 
 async function getDocs() {

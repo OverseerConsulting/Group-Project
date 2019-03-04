@@ -12,4 +12,4 @@ var docSchema = new Schema({
         count: Number
     }]
 });
-module.exports = mongoose.model('documents', docSchema);
+module.exports = mongoose.model('document', docSchema);
