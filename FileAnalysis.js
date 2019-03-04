@@ -73,5 +73,4 @@ function calculateRank(report) {
         return "Lowest Priority";
     }
 }
-
 module.exports = { analyseDocument, calculateRank };
