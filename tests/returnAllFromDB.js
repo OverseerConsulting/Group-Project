@@ -3,7 +3,7 @@ async function outputData() {
     let mongoose = require('mongoose');
     mongoose.connect('mongodb://localhost/test', { useNewUrlParser: true });
 
-    let Schema = require("./jsontomongoschema"); //call model
+    let Schema = require("../models/jsontomongoschema.js"); //call model
 	Schema.set('collection', "integrationtest");
 	let Model = mongoose.model("integrationtest", Schema);
 	

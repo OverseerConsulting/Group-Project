@@ -1,6 +1,6 @@
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-let Methods = require("./csvtojson.js");
+let Methods = require("../flaggedwords/csvtojson.js");
 let outputJSON = Methods.outputJSON;
 let inputCSVFile = Methods.inputCSVFile;
 const fileLocation = "file://C:/Users/Administrator/Documents/Final_Project/";
