@@ -9,12 +9,12 @@ var deleteListsFromMongodb = jsontodatabase.deleteListsFromMongodb;
 
 var mongoose = require('mongoose');
 
-let PDF_PATH = 'loremIpsum.pdf';
+//let PDF_PATH = 'loremIpsum.pdf';
 
 //initiate('mongodb://localhost/testdb', PDF_PATH);
 
-deleteAllFromMongodb('mongodb://localhost/testdb');
-deleteListsFromMongodb('mongodb://localhost/testdb');
+//deleteAllFromMongodb('mongodb://localhost/testdb');
+//deleteListsFromMongodb('mongodb://localhost/testdb');
 
 async function initiate(dbconnect, PDF_PATH) {
     let wordList;

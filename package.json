@@ -13,18 +13,18 @@
   "license": "ISC",
   "dependencies": {
     "acorn": "^6.1.0",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.15",
     "chokidar": "^2.1.2",
+    "express": "^4.16.4",
     "fsevents": "^1.2.7",
     "jest": "^24.1.0",
+    "lodash": "4.17.11",
+    "mongoose": "^5.4.15",
     "nan": "^2.12.1",
-    "should": "^13.2.3",
-    "xmlhttprequest": "^1.8.0",
     "node-ensure": "0.0.0",
     "pdf-parser": "^1.0.5",
     "pdf2json": "^1.1.8",
-    "lodash": "4.17.11"
+    "should": "^13.2.3",
+    "xmlhttprequest": "^1.8.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
@@ -38,5 +38,4 @@
     "test": "tests"
   },
   "description": ""
- }
- 
+}
