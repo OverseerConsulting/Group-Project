@@ -3,8 +3,9 @@ let DB = require('./DBinteraction.js');
 async function analyseDocument(document) {
 
     let flaggedWords = [];
+    let tableName = "harrypotternames";
 
-    await DB.getFlaggedWords().then(function (value) {
+    await DB.getFlaggedWords(tableName).then(function (value) {
         flaggedWords = value;
     });
 
@@ -25,7 +26,7 @@ async function analyseDocument(document) {
         wordCount = wordCount + docWord.count;
 
         flaggedWords.forEach(function (flagWord) {
-            if (docWord.word.toLowerCase() == flagWord.Name.toLowerCase()) {
+            if (docWord.word.toLowerCase() == flagWord.Word.toLowerCase()) {
                 words.push({ word: docWord.word, count: docWord.count });
                 score = score + (docWord.count * flagWord.Score);
                 flaggedWordCount = flaggedWordCount + docWord.count;
@@ -72,5 +73,4 @@ function calculateRank(report) {
         return "Lowest Priority";
     }
 }
-
 module.exports = { analyseDocument, calculateRank };
