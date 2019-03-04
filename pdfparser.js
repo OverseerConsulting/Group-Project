@@ -1,4 +1,5 @@
 var pdfParser = require('pdf-parser');
+var fileAnalysis = require('./FileAnalysis.js');
 
 var jsontodatabase = require('./jsontodatabase');
 var writeToMongodb = jsontodatabase.writeToMongodb;
@@ -37,8 +38,12 @@ async function initiate(dbconnect, PDF_PATH) {
         listObject.filename = PDF_PATH;
         listObject.time_stored = date + time;
         listObject.owner_id = 1;
+        listObject.flaggedWordsList = "harrypotternames";
         listObject.words = wordList;
 
+
+
+        fileAnalysis.analyseDocument(listObject);
         writeListToMongodb(dbconnect, listObject);
     }
 }
