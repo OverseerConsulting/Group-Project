@@ -1,16 +1,10 @@
 {
-  "name": "express_react",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
   "name": "overseerfileanalyser",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest \"tests\" --detectOpenHandles --forceExit"
+    "test": "jest \"tests\" --detectOpenHandles --forceExit",
+    "start": "node server.js"
   },
   "jest": {
     "collectCoverage": true,
@@ -19,17 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "crypto": "^1.0.1",
     "eslint": "^5.14.1",
-    "express": "^4.16.4",
     "multer": "^1.4.1",
     "path": "^0.12.7",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
     "acorn": "^6.1.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.15",
     "chokidar": "^2.1.2",
-    "fsevents": "^1.2.7",
     "jest": "^24.1.0",
     "nan": "^2.12.1",
     "should": "^13.2.3",
