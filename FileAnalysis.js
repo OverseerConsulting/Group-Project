@@ -3,7 +3,7 @@ let DB = require('./DBinteraction.js');
 async function analyseDocument(document) {
 
     let flaggedWords = [];
-    tableName = "harrypotternames";
+    let tableName = "harrypotternames";
 
     await DB.getFlaggedWords(tableName).then(function (value) {
         flaggedWords = value;
@@ -26,7 +26,7 @@ async function analyseDocument(document) {
         wordCount = wordCount + docWord.count;
 
         flaggedWords.forEach(function (flagWord) {
-            if (docWord.word.toLowerCase() == flagWord.Name.toLowerCase()) {
+            if (docWord.word.toLowerCase() == flagWord.Word.toLowerCase()) {
                 words.push({ word: docWord.word, count: docWord.count });
                 score = score + (docWord.count * flagWord.Score);
                 flaggedWordCount = flaggedWordCount + docWord.count;

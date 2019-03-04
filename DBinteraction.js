@@ -9,7 +9,7 @@ async function outputData(tableName) {
 
     flaggedWords.find({ ListName: tableName }, function (err, flaggedWords) {
       if (err) throw err;
-      resolve(flaggedWords);
+      resolve(flaggedWords[0]);
     });
   })
 }
