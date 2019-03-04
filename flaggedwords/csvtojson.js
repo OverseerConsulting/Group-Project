@@ -1,4 +1,5 @@
 let XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+const util = require('util')
 
 let allText = "";
 function inputCSVFile(file) {
@@ -13,30 +14,41 @@ function inputCSVFile(file) {
     }
     rawFile.send(null);
     let arrayOfWords = allText.split(/(?:\r\n)|(?:(?:,))/);
-    return arrayOfWords;
+    return [file, arrayOfWords];
 }
 
 function outputJSON(input) {
-    let inputArray = input;
+    let inputArray = input[1];
 
-    //console.log(inputArray);
     let finalArray = new Array();
     let startPoint;
-    if (inputArray[1] == "Score") { 
-        startPoint = 2; 
+    if (input[1][0] == "Word") {
+        startPoint = 2;
     }
-    else { 
-        startPoint = 0; 
+    else {
+        startPoint = 0;
     }
+    let rawFile = input[0].substring(input[0].lastIndexOf("/") + 1);
+    let collectionName = rawFile.substring(0, rawFile.indexOf("."));
+    let ListNameObject = new Object();
+    let wordsArray = new Array();
+
+    ListNameObject.ListName = collectionName;
+
     for (let i = startPoint; i < inputArray.length; i++) {
+
         let addJsonData = new Object();
-        addJsonData.Name = inputArray[i];
+        addJsonData.Word = inputArray[i];
         addJsonData.Score = inputArray[i + 1];
-        finalArray.push(addJsonData);
+        wordsArray.push(addJsonData);
+
         i++;
     }
+    ListNameObject.Words = wordsArray;
+    finalArray.push(ListNameObject);
+    
     let jsonArray = JSON.parse(JSON.stringify(finalArray))
-    //console.log(jsonArray);
+    console.log(util.inspect(jsonArray, {showHidden: false, depth: null}))
     return jsonArray;
 }
 module.exports = { outputJSON, inputCSVFile };

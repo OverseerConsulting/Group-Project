@@ -2,7 +2,12 @@ let mongoose = require('mongoose');
 
 // create the schema
 let flaggedWordsSchema = new mongoose.Schema({
-  Name: String,
-  Score: Number
+  ListName: String,
+  Words: [
+    {
+    Word: String,
+    Score: Number
+  }
+  ]
 });
 module.exports = flaggedWordsSchema;

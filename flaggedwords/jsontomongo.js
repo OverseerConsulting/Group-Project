@@ -1,10 +1,12 @@
 let jsonString;
+const util = require('util')
 let mongoose = require('mongoose');
 let databaseURL = "mongodb://localhost/test";
 
-function writeToMongodb() {
+function writeToMongodb(fileName) {
+  console.log(fileName)
   let Methods = require('./csvtojson.js');
-  let flaggedWordsSchema = require('../models/jsontomongoschema.js');
+  let flaggedWordsSchema = require('./jsontomongoschema.js');
   let outputJSON = Methods.outputJSON;
   let inputCSVFile = Methods.inputCSVFile;
   let fileFormat = fileName.substr(fileName.lastIndexOf("."));
@@ -21,15 +23,16 @@ function writeToMongodb() {
     //Bind connection to error event (to get notification of connection errors)
     db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-    flaggedWordsSchema.set('collection', collectionName);
+    flaggedWordsSchema.set('collection', "flaggedwords");
 
     mongoose.model("integrationtest", flaggedWordsSchema);
 
-    let output = mongoose.model(collectionName, flaggedWordsSchema);
+    let output = mongoose.model("flaggedwords", flaggedWordsSchema);
 
     // Save the new model instance, passing a callback
     //console.log("file://" + fileName);
     jsonString = outputJSON(inputCSVFile("file://" + fileName));
+    console.log(util.inspect(jsonString, {showHidden: false, depth: null}))
     saveData(output);
   }
 }
