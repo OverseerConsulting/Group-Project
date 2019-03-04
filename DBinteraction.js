@@ -1,21 +1,21 @@
 let dbconnect = '';
 
-async function outputData() {
+async function outputData(tableName) {
   return new Promise(function (resolve, reject) {
     var mongoose = require('mongoose');
 
     mongoose.connect(dbconnect, { useNewUrlParser: true });
-    var harrypotternames = require('./models/harrypotternames.js');
+    var flaggedWords = require('./models/flaggedWords.js');
 
-    harrypotternames.find({}, { Name: 1, Score: 1, _id: 0 }, function (err, harrypotternames) {
+    flaggedWords.find({ ListName: tableName }, function (err, flaggedWords) {
       if (err) throw err;
-      resolve(harrypotternames);
+      resolve(flaggedWords);
     });
   })
 }
-async function getFlaggedWords() {
-  var harrypotternames = await outputData();
-  return harrypotternames;
+async function getFlaggedWords(tableName) {
+  var flaggedWordsList = await outputData(tableName);
+  return flaggedWordsList;
 }
 
 async function getDocs() {

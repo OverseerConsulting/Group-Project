@@ -3,8 +3,9 @@ let DB = require('./DBinteraction.js');
 async function analyseDocument(document) {
 
     let flaggedWords = [];
+    tableName = "harrypotternames";
 
-    await DB.getFlaggedWords().then(function (value) {
+    await DB.getFlaggedWords(tableName).then(function (value) {
         flaggedWords = value;
     });
 
