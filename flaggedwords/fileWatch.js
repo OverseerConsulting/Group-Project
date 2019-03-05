@@ -1,7 +1,8 @@
 let Methods = require('./jsontomongo.js');
 let chokidar = require('chokidar');
-
-let watcher = chokidar.watch('C:/Users/Administrator/Documents/Final_Project/input/', { ignored: /^\./, persistent: true }); //SET THIS
+let pdfParse = require('../pdfparser.js');
+let db = 'mongodb://overseerconsulting:FF5RkQR9cHA6BrTNZA5CAjQdb2nPiSjMh80uI0hndUa7smjhaMyWcUYuCcjNPf8kTjnp0ayVPnBViiov5moKtQ==@overseerconsulting.documents.azure.com:10255/harrypotternames?ssl=true';
+let watcher = chokidar.watch('/var/lib/jenkins/workspace/Iteration1Branch/uploads', { ignored: /^\./, persistent: true }); //SET THIS
 
 let fileFormat;
 
@@ -14,8 +15,8 @@ watcher
   if (fileFormat == ".txt" || fileFormat == ".csv") {
 		Methods.writeToMongodb(path);
 	}
-	else{
-		
+	else if (fileFormat == ".pdf"){
+		pdfParse.initiate(db, path);
 	}
 })
 	.on('change', function (path) {
