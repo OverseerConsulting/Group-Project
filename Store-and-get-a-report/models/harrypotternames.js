@@ -12,5 +12,6 @@ const PotterSchema = new Schema({
     }
 });
 
+
 const Potter = mongoose.model('harrypotternames', PotterSchema);
 module.exports = Potter;
