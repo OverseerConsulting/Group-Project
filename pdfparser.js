@@ -34,7 +34,7 @@ async function initiate(dbconnect, PDF_PATH) {
 
         let listObject = {};
         //console.log(wordList);
-        listObject.name = PDF_PATH.substring(0, PDF_PATH.length - 4);
+        listObject.name = PDF_PATH.substring(PDF_PATH.lastIndexOf("/") + 1);
         listObject.filename = PDF_PATH;
         listObject.time_stored = date + time;
         listObject.owner_id = 1;
