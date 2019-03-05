@@ -6,11 +6,11 @@ const routes1 = require('./routes/reportApi');
 
 
 const app = express();
+// harrypotternames is the name of the table we are connected to
 mongoose.connect('mongodb://localhost/harrypotternames');
 mongoose.Promise = global.Promise;
 
 app.use(express.static('public'));
-
 app.use(bodyParser.json());
 
 app.use('/api', routes);
