@@ -1,0 +1,30 @@
+{
+  "name": "final-project-csv-to-json",
+  "version": "1.0.0",
+  "description": "JS script that converts a .csv file into json",
+  "main": "csvtojson.js",
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "dependencies": {
+    "chokidar": "^2.1.2",
+    "csvtojson": "^2.0.8",
+    "express": "^4.16.4",
+    "fsevents": "^1.2.7",
+    "jest": "^24.1.0",
+    "mongoose": "^5.4.15",
+    "nan": "^2.12.1",
+    "should": "^13.2.3",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1",
+    "eslint-plugin-react": "^7.12.4"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Stuart Allender",
+  "license": "ISC"
+}
