@@ -1,0 +1,7 @@
+/.scannerwork/
+/coverage/
+/node_modules/
+.eslintrc
+package-lock.json
+sonar-project.properties
+test.java
