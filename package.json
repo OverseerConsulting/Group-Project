@@ -1,16 +1,41 @@
 {
-  "name": "session-based",
-  "version": "0.1.0",
-  "private": true,
+  "name": "overseerfileanalyser",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest \"tests\" --detectOpenHandles --forceExit",
+    "start": "node server.js",
+    "start-react": "react-scripts start",
+    "build": "react-scripts build",
+    "test-react": "react-scripts test --detectOpenHandles --coverage",
+    "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "verbose": true
+  },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "eslint": "^5.14.1",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "enzyme": "^3.9.0",
+    "path": "^0.12.7",
+    "react-dropzone": "^10.0.0",
+    "multer": "^1.4.1",
+    "acorn": "^6.1.0",
+    "chokidar": "^2.1.2",
+    "lodash": "4.17.11",
+    "jest": "^24.1.0",
+    "react-router-dom": "^4.3.1",
     "enzyme-adapter-react-16": "^1.10.0",
     "errorhandler": "^1.5.0",
     "express-jwt": "^5.3.1",
     "express-session": "^1.15.6",
+    "nan": "^2.12.1",
     "fetch-mock": "^7.3.1",
     "jsonwebtoken": "^8.5.0",
     "mongoose": "^5.4.16",
@@ -22,18 +47,32 @@
     "react-dom": "^16.8.3",
     "react-scripts": "2.1.5",
     "sinon": "^7.2.7",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "node-ensure": "0.0.0",
+    "pdf-parser": "^1.0.5",
+    "pdf2json": "^1.1.8",
+    "should": "^13.2.3",
+    "xmlhttprequest": "^1.8.0"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --detectOpenHandles --coverage",
-    "eject": "react-scripts eject"
+  "devDependencies": {
+    "@babel/preset-env": "^7.3.4",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.14.1",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+	  "nodemon": "^1.18.10",
+    "jest": "^24.1.0"
   },
   "browserslist": [
     ">0.2%",
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "directories": {
+    "test": "tests"
+  },
+  "description": ""
 }
+
+
