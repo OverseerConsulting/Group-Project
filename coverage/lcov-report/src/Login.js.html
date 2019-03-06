@@ -20,14 +20,14 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.76% </span>
+        <span class="strong">63.64% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>21/34</span>
+        <span class='fraction'>21/33</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/0</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">62.5% </span>
@@ -35,9 +35,9 @@
         <span class='fraction'>10/16</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">61.76% </span>
+        <span class="strong">63.64% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>21/34</span>
+        <span class='fraction'>21/33</span>
       </div>
     </div>
   </div>
@@ -198,7 +198,20 @@
 153
 154
 155
-156</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -271,9 +284,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -294,7 +304,13 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">11x</span>
@@ -318,11 +334,21 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -362,7 +388,7 @@ class Login extends Component {
     super(props);
 &nbsp;
     this.state = {
-      registerError: '',
+      registerError: ' ',
       loginError: '',
       isLoggedIn: '',
       registerFirstName: '',
@@ -426,10 +452,7 @@ class Login extends Component {
       registerJobRole,
       registerClearenceLevel,
     } = <span class="cstat-no" title="statement not covered" >this.state;</span>
-&nbsp;
-<span class="cstat-no" title="statement not covered" >    console.log(registerEmail)</span>
-<span class="cstat-no" title="statement not covered" >    console.log(registerPassword);</span>
-<span class="cstat-no" title="statement not covered" >    await fetch('http://localhost:8000/api/users',{</span>
+<span class="cstat-no" title="statement not covered" >    await fetch('http://localhost:8000/api/users/register',{</span>
          method: 'POST',
          headers: {
              "Content-Type": "application/json"
@@ -444,13 +467,19 @@ class Login extends Component {
              clearenceLevel: registerClearenceLevel
            }
          }),
-     }).then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
-     .then(<span class="fstat-no" title="function not covered" >(m</span>essages) =&gt; {
-<span class="cstat-no" title="statement not covered" >     console.log(registerEmail)</span>
-<span class="cstat-no" title="statement not covered" >    console.log(registerPassword);</span>
-     })
-<span class="cstat-no" title="statement not covered" >     console.log("HALF");</span>
+     }).then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.json())</span>
+     .then(<span class="fstat-no" title="function not covered" >js</span>on =&gt; {
+<span class="cstat-no" title="statement not covered" >      if(json.success == false){</span>
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+          registerError: json.message
+        })
+    }else {
+<span class="cstat-no" title="statement not covered" >      this.setState({</span>
+        registerError: "Registration Successful"
+      })
     }
+  })
+}
 &nbsp;
   this.onLogin = <span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {
     const {
@@ -469,18 +498,27 @@ class Login extends Component {
             password: loginPassword
           }
         })
-    }).then(<span class="fstat-no" title="function not covered" >(r</span>esponse) =&gt; <span class="cstat-no" title="statement not covered" >response.json())</span>
-    .then(<span class="fstat-no" title="function not covered" >(m</span>essages) =&gt; {
-<span class="cstat-no" title="statement not covered" >    console.log(loginEmail)</span>
-<span class="cstat-no" title="statement not covered" >   console.log(loginPassword);</span>
+      }).then(<span class="fstat-no" title="function not covered" >re</span>s =&gt; <span class="cstat-no" title="statement not covered" >res.json())</span>
+      .then(<span class="fstat-no" title="function not covered" >js</span>on =&gt; {
+<span class="cstat-no" title="statement not covered" >        if(json.success == false){</span>
+<span class="cstat-no" title="statement not covered" >          this.setState({</span>
+            loginError: json.message
+          })
+      }else {
+<span class="cstat-no" title="statement not covered" >        this.setState({</span>
+          loginError: "Login Successful"
+        })
+      }
     })
   }
-  }
+}
+&nbsp;
   render() {
     return (
     &lt;div&gt;
       &lt;div&gt;
         &lt;p&gt;Register&lt;/p&gt;
+        &lt;label id="registerError"&gt;{this.state.registerError}&lt;/label&gt;&lt;br/&gt;
         &lt;label&gt;First Name:&lt;/label&gt;
         &lt;input id="registerField1" type='text' placeholder="First Name" value={this.state.registerFirstName} onChange={this.onTextboxChangeRegisterFirstName}/&gt;&lt;br/&gt;
         &lt;label&gt;Last Name:&lt;/label&gt;
@@ -497,6 +535,7 @@ class Login extends Component {
       &lt;/div&gt;
       &lt;div&gt;
         &lt;p&gt;Login&lt;/p&gt;
+        &lt;label&gt;{this.state.loginError}&lt;/label&gt;&lt;br/&gt;
         &lt;label&gt;Email:&lt;/label&gt;
         &lt;input id="loginField1" type="text" placeholder="Email" value={this.state.loginEmail} onChange={this.onTextboxChangeLoginEmail}/&gt;&lt;br/&gt;
         &lt;label&gt;Password:&lt;/label&gt;
@@ -514,7 +553,7 @@ export default Login;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Mar 05 2019 11:24:14 GMT+0000 (Greenwich Mean Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Wed Mar 06 2019 11:41:18 GMT+0000 (Greenwich Mean Time)
 </div>
 </div>
 <script src="..\prettify.js"></script>

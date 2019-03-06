@@ -71,10 +71,7 @@ class Login extends Component {
       registerJobRole,
       registerClearenceLevel,
     } = this.state;
-
-    console.log(registerEmail)
-    console.log(registerPassword);
-    await fetch('http://localhost:8000/api/users',{
+    await fetch('http://localhost:8000/api/users/register',{
          method: 'POST',
          headers: {
              "Content-Type": "application/json"
@@ -91,14 +88,17 @@ class Login extends Component {
          }),
      }).then(res => res.json())
      .then(json => {
-       console.log(json.message)
+      if(json.success == false){
         this.setState({
-          registerError: json.errors.firstName
+          registerError: json.message
         })
-     })
-     console.log("HALF");
-     console.log(this.state.registerError)
+    }else {
+      this.setState({
+        registerError: "Registration Successful"
+      })
     }
+  })
+}
 
   this.onLogin = async () => {
     const {
@@ -117,19 +117,27 @@ class Login extends Component {
             password: loginPassword
           }
         })
-    }).then((response) => response.json())
-    .then((messages) => {
-    console.log(loginEmail)
-   console.log(loginPassword);
+      }).then(res => res.json())
+      .then(json => {
+        if(json.success == false){
+          this.setState({
+            loginError: json.message
+          })
+      }else {
+        this.setState({
+          loginError: "Login Successful"
+        })
+      }
     })
   }
-  }
+}
+
   render() {
     return (
     <div>
       <div>
         <p>Register</p>
-        <label>{this.state.registerError}</label><br/>
+        <label id="registerError">{this.state.registerError}</label><br/>
         <label>First Name:</label>
         <input id="registerField1" type='text' placeholder="First Name" value={this.state.registerFirstName} onChange={this.onTextboxChangeRegisterFirstName}/><br/>
         <label>Last Name:</label>
@@ -146,6 +154,7 @@ class Login extends Component {
       </div>
       <div>
         <p>Login</p>
+        <label>{this.state.loginError}</label><br/>
         <label>Email:</label>
         <input id="loginField1" type="text" placeholder="Email" value={this.state.loginEmail} onChange={this.onTextboxChangeLoginEmail}/><br/>
         <label>Password:</label>

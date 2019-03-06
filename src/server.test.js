@@ -8,7 +8,7 @@ const whatwgFetch = jest.genMockFromModule('whatwg-fetch');
 
 describe("User registration", function () {
     test("User passed in with all correct fields", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -24,10 +24,11 @@ describe("User registration", function () {
                 }
             })
         })
+        expect(whatwgFetch.fetch.status).toBe(200);
     })
 
     test("User passed in withour firstName fields", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -42,12 +43,12 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 
     test("User passed in withour lastName field", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -62,12 +63,11 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 
     test("User passed in withour email field", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -82,12 +82,11 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 
     test("User passed in withour password field", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -102,12 +101,11 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 
     test("User passed in withour jobRole field", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -122,12 +120,11 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 
-    test("User passed in withour clearanceLevel field", async () => {
-        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users', {
+    test("User passed in without clearanceLevel field", async () => {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/register', {
             method: 'POST',
             headers: {
                 "Content-Type": "application/json"
@@ -142,11 +139,12 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(422));
+
+        console.log(whatwgFetch.fetch.status)
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 })
-describe("User registration", function () {
+describe("User Login", function () {
     test("User passed in with all correct fields", async () => {
         whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/login', {
             method: 'POST',
@@ -160,7 +158,36 @@ describe("User registration", function () {
                 }
             }),
         })
-        console.log(whatwgFetch.fetch)
-        expect(whatwgFetch.status).toBe(console.log(200));
+        expect(whatwgFetch.fetch.status).toBe(200);
+    })
+
+    test("User passed in with all correct fields", async () => {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/login', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user: {
+                    password: "123",
+                }
+            }),
+        })
+        expect(whatwgFetch.fetch.status).toBe(422);
+    })
+
+    test("User passed in with all correct fields", async () => {
+        whatwgFetch.fetch = await fetch('http://localhost:8000/api/users/login', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                user: {
+                    email: "Email"
+                }
+            }),
+        })
+        expect(whatwgFetch.fetch.status).toBe(422);
     })
 })

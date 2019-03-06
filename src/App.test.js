@@ -3,8 +3,6 @@ import Enzyme, { shallow, mount} from "enzyme";
 import ReactDOM from 'react-dom';
 import Login from './Login';
 import Adapter from "enzyme-adapter-react-16";
-import sinon from 'sinon'
-import { PromiseProvider } from 'mongoose';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
