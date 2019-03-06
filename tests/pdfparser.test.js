@@ -1,6 +1,3 @@
-//var pdfParser = require('pdf-parser');
-//pdfParser.workerSrc = "./node_modules/pdf-parser/lib/pdf.worker.js";
-
 const methods = require("../pdfparser.js");
 let checkDuplicate = methods.checkDuplicate;
 let removePunctuation = methods.removePunctuation;

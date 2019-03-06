@@ -1,20 +1,8 @@
 var pdfParser = require('pdf-parser');
 var fileAnalysis = require('./FileAnalysis.js');
-
 var jsontodatabase = require('./jsontodatabase');
 var writeToMongodb = jsontodatabase.writeToMongodb;
 var writeListToMongodb = jsontodatabase.writeListToMongodb;
-var deleteAllFromMongodb = jsontodatabase.deleteAllFromMongodb;
-var deleteListsFromMongodb = jsontodatabase.deleteListsFromMongodb;
-
-var mongoose = require('mongoose');
-
-//let PDF_PATH = 'loremIpsum.pdf';
-
-//initiate('mongodb://localhost/testdb', PDF_PATH);
-
-//deleteAllFromMongodb('mongodb://localhost/testdb');
-//deleteListsFromMongodb('mongodb://localhost/testdb');
 
 async function initiate(dbconnect, PDF_PATH) {
     let wordList;
@@ -22,7 +10,7 @@ async function initiate(dbconnect, PDF_PATH) {
         await parse(dbconnect, error, pdf).then(function (value) {
             wordList = value;
         });
-        //console.log(wordList);
+
     });
 
     return setTimeout(printList, 3000);
@@ -33,7 +21,7 @@ async function initiate(dbconnect, PDF_PATH) {
         let time = ' ' + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
         let listObject = {};
-        //console.log(wordList);
+
         listObject.name = PDF_PATH.substring(PDF_PATH.lastIndexOf("/") + 1);
         listObject.filename = PDF_PATH;
         listObject.time_stored = date + time;
@@ -90,9 +78,9 @@ function doParse(dbconnect, pdf) {
     for (let i = 0; i < pdf.pages.length; i++) {
         for (let j = 0; j < pdf.pages[i].texts.length; j++) {
             tempList = pdf.pages[i].texts[j].text.split(" ");
-            //console.log(tempList.length);
+
             for (let k = 0; k < tempList.length; k++) {
-                //console.log(tempList[k]);
+
                 tempList[k] = removePunctuation(tempList[k]);
                 if (tempList[k] != "") {
                     if (checkDuplicate(tempList[k], wordList) == null) {
@@ -105,7 +93,6 @@ function doParse(dbconnect, pdf) {
             }
         }
     }
-    //console.log(wordList);
     return wordList;
 }
 

@@ -1,10 +1,6 @@
-let mongoose = require('mongoose');
 let Methods = require('./returnAllFromDB.js');
 let result = Methods.app();
 const should = require("should");
-
-const util = require('util')
-
 
 describe('Testing if the data went into the database', async () => {
 	test('The first value should have a name of "Alpha"', async () => {

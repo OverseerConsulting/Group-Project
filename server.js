@@ -24,14 +24,11 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', upload.single('file-to-upload'), (req, res) => {
-  //res.send(req.file.filename); ---- this displays the random filename back to the front end
   res.redirect('/');
 });
 
-// console.log that server is running
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// GET route
 app.get('/express_backend', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
