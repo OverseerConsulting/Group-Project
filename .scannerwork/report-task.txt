@@ -1,6 +1,0 @@
-projectKey=loginSessions
-serverUrl=http://localhost:9000
-serverVersion=7.5.0.20543
-dashboardUrl=http://localhost:9000/dashboard?id=loginSessions
-ceTaskId=AWk5rcT-mR48eSp4yqDl
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWk5rcT-mR48eSp4yqDl
