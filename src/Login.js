@@ -71,7 +71,7 @@ class Login extends Component {
       registerJobRole,
       registerClearenceLevel,
     } = this.state;
-    await fetch('http://localhost:8000/api/users/register',{
+    await fetch('http://localhost:5000/api/users/register',{
          method: 'POST',
          headers: {
              "Content-Type": "application/json"
@@ -106,7 +106,7 @@ class Login extends Component {
       loginPassword
     } = this.state
 
-    await fetch('http://localhost:8000/api/users/login', {
+    await fetch('http://localhost:5000/api/users/login', {
       method: 'POST',
       headers: {
         "Content-Type": "application/json"

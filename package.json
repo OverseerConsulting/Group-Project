@@ -1,11 +1,16 @@
 {
-  "name": "session-based",
-  "version": "0.1.0",
-  "private": true,
+  "name": "overseerfileanalyser",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "acorn": "^6.1.0",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "chokidar": "^2.1.2",
     "cors": "^2.8.5",
+    "create-react-app": "^2.1.5",
+    "crypto": "^1.0.1",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.10.0",
     "errorhandler": "^1.5.0",
@@ -13,16 +18,27 @@
     "express-session": "^1.15.6",
     "fetch-mock": "^7.3.1",
     "jsonwebtoken": "^8.5.0",
+    "lodash": "4.17.11",
     "mongoose": "^5.4.16",
     "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "nan": "^2.12.1",
+    "node-ensure": "0.0.0",
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "pdf-parser": "^1.0.5",
+    "pdf2json": "^1.1.8",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
+    "react-dropzone": "^10.0.0",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.5",
+    "should": "^13.2.3",
     "sinon": "^7.2.7",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "xmlhttprequest": "^1.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,6 +46,13 @@
     "test": "react-scripts test --detectOpenHandles --coverage",
     "eject": "react-scripts eject"
   },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "description": "",
   "browserslist": [
     ">0.2%",
     "not dead",
