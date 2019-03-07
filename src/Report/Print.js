@@ -10,30 +10,14 @@ import Rank from './Rank.js'
 import Words1 from './Words1.js'
 import { FaPrint } from 'react-icons/fa';
 import Chart from '../Chart';
+import FullReport from './fullReport.js';
 
 
 class ComponentToPrint extends React.Component {
   render() {
     return (
       <div>
-        <center><h1><b>REPORT</b></h1></center>
-
-
-        <div class="center">
-
-          <Doc />
-          <WordCount />
-          <Score />
-          <FlaggedWC />
-          <FlaggedP />
-          <Status />
-          <Rank />
-          <br></br>
-          <center><h3><b>Word count Chart</b></h3></center>
-          <br></br>
-          <Words1 />
-        </div>
-
+        <FullReport />
       </div>
 
 
