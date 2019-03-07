@@ -32,18 +32,8 @@ import React, { Component } from 'react';
               <center><form class="uploadForm" action="/" encType="multipart/form-data" method="post">
               <div>
               <input class="upload" type="file" name="file-to-upload"/>
-              <input class="uploadbutton" type="submit" value="Upload"/>
               </div>
-              <p></p>
-              <div>
-              <input class="upload" type="file" name="file-to-upload"/>
               <input class="uploadbutton" type="submit" value="Upload"/>
-              </div>
-              <p></p>
-              <div>
-              <input class="upload" type="file" name="file-to-upload"/>
-              <input class="uploadbutton" type="submit" value="Upload"/>
-              </div>
               </form></center>
               <p className="App-intro">{this.state.data}</p>
             </div>
