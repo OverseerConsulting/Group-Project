@@ -15,7 +15,10 @@ let storage = multer.diskStorage({
     filename: function (req, file, cb) {
       crypto.pseudoRandomBytes(16, function (err, raw) {
         if (err) return cb(err)
-  
+        var ext = path.extname(file.originalname);
+        if(ext !== '.csv' && ext !== '.pdf' && ext !== '.txt') {
+          return cb(new Error('Only CSV, PDF and TXT files are allowed'))
+      }
         cb(null, raw.toString('hex') + path.extname(file.originalname))
       })
     }
