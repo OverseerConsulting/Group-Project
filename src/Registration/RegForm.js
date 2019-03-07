@@ -58,25 +58,22 @@ handelSubmit = event => {
         console.log(res.data)
     })
 }
-       
-
   render() {
     return (
       <div id = "new-user-container">
           <form id = "new details" onSubmit ={this.handelSubmit}>
-              <label>Enter first Name</label>
+              <label>Enter First Name</label>
               <input type="text" placeholder = "First name" required onChange ={this.handleChangeFirstName}/>
               <label>Enter Last Name</label>
               <input type="text" placeholder = "Last name" required onChange ={this.handleChangeLastName}/>
-              <label>Enter email address</label>
+              <label>Enter Email Address</label>
               <input type="text" placeholder = "Email" required onChange ={this.handleChangeEmail}/>
               <label>Password:</label>
               <input type="text" placeholder="Password" required value={this.state.RegPassword} onChange={this.handleChangePassword}/>
               <label>Job Role:</label>
               <input type='text' placeholder="Job Role" required value={this.state.RegJobRole} onChange={this.handleChangeJobrole}/>
-              <label>Clearence Level:</label>
+              <label>Clearance Level:</label>
               <input type="text" placeholder="Clearence Level" required value={this.state.RegClearenceLevel} onChange={this.handleChangeclearenceLevel}/>
-
               <div id="testdiv"> 
               <div class="button button1">
               <button1 type = "submit">Submit</button1>

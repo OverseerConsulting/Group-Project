@@ -11,6 +11,7 @@ import Report from "./Report/Print.js";
 import Reg from './Registration/Reg.js';
 import logo from './logo.png';
 
+
  
 class Main extends Component {
   render() {
@@ -18,14 +19,14 @@ class Main extends Component {
         <HashRouter>
         <div>
         <img src={logo} className="App-logo" alt="logo" align ="right" />
-          <br></br>
-          <h1>Overseer Consulting</h1>
+          <br></br><br></br>
+          <h1>Overseer Consulting: Project Thorium</h1>
           
           <ul className="header">
           <li><NavLink exact to="/">Login</NavLink></li>
           <li><NavLink to="/reg">Registration</NavLink></li>
-            <li><NavLink to="/upload">Upload files</NavLink></li>
-            <li><NavLink to="/report">View reports</NavLink></li>
+            <li><NavLink to="/upload">Upload Files</NavLink></li>
+            <li><NavLink to="/report">View Reports</NavLink></li>
             
          
           </ul>

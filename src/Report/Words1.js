@@ -25,13 +25,6 @@ class Words extends React.Component {
         { Report: response.data[2] }
       )
       )
-
-    //console.log(thids.state.Wordds[0].wor)
-    // console.log(this.state.Wordd[1].word)
-    // console.log(this.state.Wordd[2].word)
-    // console.log(this.state.Wordd[0].count)
-    // console.log(this.state.Wordd[1].count)
-    // console.log(this.state.Wordd[2].count)
   }
 
   async componentDidMount() {
@@ -45,26 +38,19 @@ class Words extends React.Component {
       <React.Fragment>
         <div>
           <div className="App">
-         
-         
-         
-
-            <VictoryChart style={{ parent: { maxWidth: "50%" } }}
+            <VictoryChart style={{ parent: { maxWidth: "50%" }}}
               theme={VictoryTheme.material}
               padding={{ left: 90, top: 10, right: 10, bottom: 34 }}
             >
-            <VictoryLabel
-                Text="Word Found by Count" x={255} y={30} textAnchor="middle"
-              />
               <VictoryStack
                 horizontal={true}>
                 <VictoryBar
+                  style={{ data: { fill: "#c43a31" } }}
                   data={this.state.Report.words}
                   x="word"
                   y="count"
-                  barRatio={0.5} />
+                  barRatio={0.7} />
               </VictoryStack>
-         
             </VictoryChart>
           </div>
         </div>

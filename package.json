@@ -18,7 +18,7 @@
     "react-downloadbutton": "^1.0.0",
     "react-icons": "^3.5.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
+    "react-scripts": "^2.1.8",
     "react-to-print": "^2.0.0-alpha.7",
     "victory": "^32.0.0"
   },

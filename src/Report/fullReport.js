@@ -29,24 +29,26 @@ class FullReport extends React.Component {
 
 
                 <div class="center">
-                    <select id="reportSelect" onChange={(e) => this.setState({ Report: this.state.reports[e.target.value] })}>
+                    <center><select id="reportSelect" onChange={(e) => this.setState({ Report: this.state.reports[e.target.value] })}>
                         {this.state.reports.map((report) => <option key={report.document} value={this.state.reports.indexOf(report)}>{report.document}</option>)}
-                    </select>
-                    <p>File name: {this.state.Report.document}</p>
-                    <p>Word Count: {this.state.Report.wordCount}</p>
-                    <p>Score: {this.state.Report.score}</p>
-                    <p>Flagged Word Count: {this.state.Report.flaggedWordCount}</p>
-                    <p>Flagged Word Percentage: {this.state.Report.flagPercent}%</p>
-                    <p>Status: {this.state.Report.status}</p>
-                    <p>Rank: {this.state.Report.rank}</p>
+                    </select></center>
+                    <center><h3>File Name: {this.state.Report.document}</h3></center>
+                    <center><h3>Word Count: {this.state.Report.wordCount}</h3></center>
+                    <center><h3>Score: {this.state.Report.score}</h3></center>
+                    <center><h3>Flagged Word Count: {this.state.Report.flaggedWordCount}</h3></center>
+                    <center><h3>Flagged Word Percentage: {this.state.Report.flagPercent}%</h3></center>
+                    <center><h3>Status: {this.state.Report.status}</h3></center>
+                    <center><h3>Rank: {this.state.Report.rank}</h3></center>
                     <br></br>
-                    <center><h3><b>Word Count Chart</b></h3></center>
+                    <center><h2><b>Word Count Chart</b></h2></center>
                     <br></br>
                     <div>
                         <div className="App">
                             <VictoryChart style={{ parent: { maxWidth: "50%" } }}
                                 theme={VictoryTheme.material}
                                 padding={{ left: 90, top: 10, right: 10, bottom: 34 }}
+                                width={400}
+                                height={400}
                             >
                                 <VictoryLabel
                                     Text="Word Found by Count" x={255} y={30} textAnchor="middle"

@@ -26,9 +26,11 @@ import React, { Component } from 'react';
           return (
             <div>
               <p></p>
-              <center><h2>Upload Files to be Analysed</h2></center>
+              <center><h2>Upload a File to be Analysed</h2></center>
+              <br></br>
               <center><h3>The upload function only allows PDF, TXT and CSV file formats</h3></center>
               <p></p>
+              <br></br>
               <center><form class="uploadForm" action="/" encType="multipart/form-data" method="post">
               <div>
               <input class="upload" type="file" name="file-to-upload"/>
