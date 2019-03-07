@@ -1,0 +1,196 @@
+body {
+    background-color: rgb(95, 121, 141);
+    padding: 20px;
+    margin: 0;
+  }
+  #new-user-container{
+    font-family:Trebuchet MS;
+  }
+  h1, h2, h3, h4, p, ul, li {
+    font-family:Trebuchet MS;
+    color: white;
+  }
+  ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+  ul.header {
+    background-color: rgb(45, 120, 190);
+    padding: 0;
+  }
+  ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+ 
+  ul.header li a:hover {
+   background-color: rgb(54, 139, 218);
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+
+  div#testdiv {
+    text-align: center;
+  }
+  .content h2 {
+    padding: 0;
+    margin: 0;
+  }
+  .content li {
+    margin-bottom: 10px;
+  }
+
+  .active {
+  background-color: rgb(54, 139, 218);
+}
+
+  .center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid rgb(54, 139, 218);
+    padding: 60px;
+  }
+
+  body{
+    font-family: Raleway;
+    color: #020202;
+    margin: 10px 30px;
+}
+input[type="text"]{
+    display: block;
+    width: 300px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 4px;
+     background: whitesmoke;
+    border: 1px solid #ddd;
+}
+label{
+    font-weight: bold;
+}
+.title{
+    color: #fff;
+    text-align: center;
+    font-size: 48px;
+}
+#registration h1{
+    text-align: center;
+}
+form{
+    max-width: 350px;
+    margin: 30px auto;
+    
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+
+span.false{
+    border-radius: 10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+}
+
+.button1 {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+ 
+}
+
+.button1 {
+  background-color: rgb(54, 139, 218);
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(54, 139, 218);
+   justify-content: center;
+}
+
+.button1#loginbutton {
+  display: inline-block;
+}
+
+.button1:hover {
+    background-color:rgb(88, 133, 172);
+    color: white;
+    justify-content: center;
+  }
+
+  input.uploadbutton {
+    background-color: rgb(61, 139, 212);
+    border: 2px solid rgb(54, 139, 218);
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    justify-content: center;
+   
+  }
+
+  input.upload {
+    background-color: rgb(61, 139, 212);
+    border: 2px solid #368bda;
+    color: rgb(0, 0, 0);
+    padding: 16px 32px;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    justify-content: center;
+   
+  }
+  
+  input.uploadbutton:hover {
+      background-color:rgb(88, 133, 172);
+      color: white;
+      justify-content: center;
+    }
+
+button.false{display: none;}
+
+
+.center1 {
+  margin: auto;
+  width: 60%;
+  border: 3px solid gray;
+  padding: 100px;
+}
+
+.uploadForm{
+  display: inline;
+}
+
+.App-logo{
+  height: 12vmin;
+  align-self: right;
+}

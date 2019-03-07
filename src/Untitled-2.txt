@@ -1,0 +1,16 @@
+  const reports = {
+    document: this.state.Document,
+    time_started: this.state.Time_Started,
+    wordCount: this.state.WordCount,
+    score: this.state.Score,
+    flagggedWordCount: this.state.FlaggedWordC,
+    flagPercent: this.state.FlaggedPercent,
+    status:  this.state.Status,
+    time_finished: this.state.Time_Finished,
+    rank: this.state.Rank,
+    words: [{
+        word: this.state.Word,
+        count: this.state.Num
+
+    }] 
+} 

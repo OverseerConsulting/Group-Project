@@ -2,7 +2,7 @@ let Methods = require('./jsontomongo.js');
 let chokidar = require('chokidar');
 let pdfParse = require('../pdfparser.js');
 let db = 'mongodb://overseerconsulting:FF5RkQR9cHA6BrTNZA5CAjQdb2nPiSjMh80uI0hndUa7smjhaMyWcUYuCcjNPf8kTjnp0ayVPnBViiov5moKtQ==@overseerconsulting.documents.azure.com:10255/harrypotternames?ssl=true';
-let watcher = chokidar.watch('/var/lib/jenkins/workspace/Iteration1Branch/uploads', { ignored: /^\./, persistent: true });
+let watcher = chokidar.watch('C:/Users/Administrator/Desktop/itmergefe1/Group-Project-It1MergeFE1/client/src/uploads', { ignored: /^\./, persistent: true });
 
 let fileFormat;
 

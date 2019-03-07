@@ -6,9 +6,11 @@ const flaggedWordsRouter = require('./routes/flaggedWordsApi');
 const multer = require('multer');
 let path = require('path');
 let crypto = require('crypto');
+let cors = require('cors');
 
 const app = express();
 
+app.use(cors());
 
 let storage = multer.diskStorage({
     destination: './uploads/',
@@ -17,7 +19,7 @@ let storage = multer.diskStorage({
         if (err) return cb(err)
         var ext = path.extname(file.originalname);
         if(ext !== '.csv' && ext !== '.pdf' && ext !== '.txt') {
-          return cb(new Error('Only CSV, PDF and TXT files are allowed'))
+          return cb(new Error('Only CSV, PDF and TXT files are allowed - Please press back on your browser'))
       }
         cb(null, raw.toString('hex') + path.extname(file.originalname))
       })
@@ -27,7 +29,7 @@ let storage = multer.diskStorage({
   let upload = multer({ storage: storage })
   
   app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/client/src/App.js');
+    res.sendFile(__dirname + '/client/src/Main.js');
   });
   
   app.post('/', upload.array('file-to-upload', 3), (req, res) => {
