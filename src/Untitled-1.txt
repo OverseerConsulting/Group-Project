@@ -1,0 +1,10 @@
+Time_Started: '',
+      WordCount : '',
+      Score: '', 
+      FlaggedWordC:'',
+      FlaggedPercent:'',
+      Status: '',
+      Time_Finished: '',
+      Rank: '',
+      Word:'',
+      Num:''
