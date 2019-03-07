@@ -24,7 +24,7 @@ let storage = multer.diskStorage({
   let upload = multer({ storage: storage })
   
   app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/client/src/App.js');
+    res.sendFile(__dirname + './groupproject/src/Main.js');
   });
   
   app.post('/', upload.array('file-to-upload', 3), (req, res) => {
