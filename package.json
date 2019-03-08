@@ -1,51 +1,67 @@
 {
-  "name": "overseerfileanalyser",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest \"tests\" --detectOpenHandles --forceExit",
-    "start": "node server.js"
-  },
-  "jest": {
-    "collectCoverage": true,
-    "verbose": true
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "eslint": "^5.14.1",
-	"body-parser": "^1.18.3",
-	"crypto": "^1.0.1",
-	"crypto": "^1.0.1",
-	"path": "^0.12.7",
-	"react-dropzone": "^10.0.0",
-    "multer": "^1.4.1",
-    "path": "^0.12.7",
-    "react-router-dom": "^4.3.1",
-    "acorn": "^6.1.0",
-    "chokidar": "^2.1.2",
-    "express": "^4.16.4",
-    "jest": "^24.1.0",
-    "lodash": "4.17.11",
-    "mongoose": "^5.4.15",
-    "nan": "^2.12.1",
-    "node-ensure": "0.0.0",
-    "pdf-parser": "^1.0.5",
-    "pdf2json": "^1.1.8",
-    "should": "^13.2.3",
-    "xmlhttprequest": "^1.8.0"
-  },
-  "devDependencies": {
-    "@babel/preset-env": "^7.3.4",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.14.1",
-    "eslint-config-airbnb-base": "^13.1.0",
-    "eslint-plugin-import": "^2.16.0",
-	"nodemon": "^1.18.10",
-    "jest": "^24.1.0"
-  },
-  "directories": {
-    "test": "tests"
-  },
-  "description": ""
+   "name": "overseerfileanalyser",
+   "version": "1.0.0",
+   "main": "index.js",
+   "scripts": {
+      "test": "jest \"tests\" --detectOpenHandles --forceExit",
+      "start": "react-scripts start"
+   },
+   "jest": {
+      "collectCoverage": true,
+      "verbose": true
+   },
+   "author": "",
+   "license": "ISC",
+   "dependencies": {
+      "@fortawesome/fontawesome-svg-core": "^1.2.15",
+      "@fortawesome/free-solid-svg-icons": "^5.7.2",
+      "@fortawesome/react-fontawesome": "^0.1.4",
+      "acorn": "^6.1.0",
+      "axios": "^0.18.0",
+      "body-parser": "^1.18.3",
+      "chokidar": "^2.1.2",
+      "cors": "^2.8.5",
+      "crypto": "^1.0.1",
+      "express": "^4.16.4",
+      "lodash": "4.17.11",
+      "mdbreact": "^4.11.0",
+      "mongoose": "^5.4.15",
+      "multer": "^1.4.1",
+      "nan": "^2.12.1",
+      "node-ensure": "0.0.0",
+      "path": "^0.12.7",
+      "pdf-parser": "^1.0.5",
+      "pdf2json": "^1.1.8",
+      "react": "^16.8.3",
+      "react-bootstrap": "^1.0.0-beta.5",
+      "react-dom": "^16.8.3",
+      "react-downloadbutton": "^1.0.0",
+      "react-dropzone": "^10.0.0",
+      "react-icons": "^3.5.0",
+      "react-router-dom": "^4.3.1",
+      "react-scripts": "^2.1.8",
+      "react-to-print": "^2.0.0-alpha.7",
+      "should": "^13.2.3",
+      "victory": "^32.0.0",
+      "xmlhttprequest": "^1.8.0",
+      "requestify": "^0.2.5",
+       "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.16.0"
+   },
+   "proxy": "http://localhost:5000",
+   "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+   ],
+   "devDependencies": {
+      "@babel/preset-env": "^7.3.4",
+      "nodemon": "^1.18.10"
+   },
+   "directories": {
+      "test": "tests"
+   },
+   "description": ""
 }
+
